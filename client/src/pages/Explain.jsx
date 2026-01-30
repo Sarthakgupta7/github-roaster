@@ -32,7 +32,7 @@
 //     setShareUrl(null);
 
 //     try {
-//       const res = await fetch("http://localhost:5002/explain", {
+//       const res = await fetch("https://github-roaster-mvtz.vercel.app/explain", {
 //         method: "POST",
 //         headers: { "Content-Type": "application/json" },
 //         body: JSON.stringify({ repoUrl, role: persona }),
@@ -225,11 +225,14 @@ function Explain() {
     setShareUrl(null);
 
     try {
-      const res = await fetch("http://localhost:5002/explain", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ repoUrl, role: persona }),
-      });
+      const res = await fetch(
+        "https://github-roaster-mvtz.vercel.app/explain",
+        {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ repoUrl, role: persona }),
+        },
+      );
 
       const data = await res.json();
       setExplanation(data.explanation);

@@ -110,11 +110,14 @@ function Compare() {
     setComparisons(null);
 
     try {
-      const res = await fetch("http://localhost:5002/compare", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ repoUrls: validUrls }),
-      });
+      const res = await fetch(
+        "https://github-roaster-mvtz.vercel.app/compare",
+        {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ repoUrls: validUrls }),
+        },
+      );
 
       const data = await res.json();
       setComparisons(data);

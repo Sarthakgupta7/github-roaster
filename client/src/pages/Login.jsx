@@ -9,7 +9,7 @@
 //         </p>
 
 //         <a
-//           href="http://localhost:5002/auth/github"
+//           href="https://github-roaster-mvtz.vercel.app/auth/github"
 //           className="flex justify-center items-center gap-3 bg-white text-black px-6 py-3 rounded-lg font-semibold hover:bg-gray-200 transition"
 //         >
 //           Continue with GitHub
@@ -30,7 +30,6 @@ import { Github, Sparkles, Shield, Zap } from "lucide-react";
 function Login() {
   return (
     <div className="min-h-screen bg-gradient-to-br from-gray-950 via-gray-900 to-black text-white overflow-hidden relative">
-      
       {/* Animated Background Orbs */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         <motion.div
@@ -41,7 +40,7 @@ function Login() {
           transition={{
             duration: 8,
             repeat: Infinity,
-            ease: "easeInOut"
+            ease: "easeInOut",
           }}
           className="absolute top-0 -right-40 w-96 h-96 bg-red-500/20 rounded-full blur-3xl"
         />
@@ -53,7 +52,7 @@ function Login() {
           transition={{
             duration: 10,
             repeat: Infinity,
-            ease: "easeInOut"
+            ease: "easeInOut",
           }}
           className="absolute -bottom-40 -left-40 w-96 h-96 bg-orange-500/20 rounded-full blur-3xl"
         />
@@ -66,10 +65,8 @@ function Login() {
           transition={{ duration: 0.6 }}
           className="w-full max-w-md"
         >
-          
           {/* Main Card */}
           <div className="bg-gray-900/60 backdrop-blur-xl border border-white/10 rounded-3xl p-8 shadow-2xl">
-            
             {/* Logo & Title */}
             <motion.div
               initial={{ scale: 0.9 }}
@@ -80,11 +77,11 @@ function Login() {
               <div className="inline-flex items-center justify-center w-16 h-16 bg-gradient-to-br from-red-500 to-orange-600 rounded-2xl mb-4 shadow-lg shadow-red-500/30">
                 <span className="text-3xl">🔥</span>
               </div>
-              
+
               <h1 className="text-4xl font-black mb-2 bg-gradient-to-r from-white via-gray-100 to-gray-300 bg-clip-text text-transparent">
                 RoastMyRepo
               </h1>
-              
+
               <p className="text-gray-400 text-sm">
                 AI-powered GitHub analysis & roasting
               </p>
@@ -113,7 +110,7 @@ function Login() {
 
             {/* CTA Button */}
             <motion.a
-              href="http://localhost:5002/auth/github"
+              href="https://github-roaster-mvtz.vercel.app/auth/github"
               initial={{ opacity: 0, y: 10 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.6, duration: 0.5 }}
@@ -123,7 +120,7 @@ function Login() {
             >
               {/* Button Shine Effect */}
               <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-1000" />
-              
+
               <Github className="w-6 h-6 relative z-10" />
               <span className="relative z-10">Continue with GitHub</span>
             </motion.a>
@@ -169,7 +166,6 @@ function Login() {
                 </div>
               </div>
             </motion.div>
-
           </div>
 
           {/* Footer Text */}
@@ -181,7 +177,6 @@ function Login() {
           >
             By continuing, you agree to our Terms of Service
           </motion.p>
-
         </motion.div>
       </div>
     </div>

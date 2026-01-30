@@ -446,7 +446,17 @@ import Groq from "groq-sdk";
 dotenv.config();
 
 const app = express();
-app.use(cors());
+app.use(
+  cors({
+    origin: [
+      "http://localhost:5173",
+      "https://github-roaster-ivory.vercel.app",
+    ],
+    methods: ["GET", "POST"],
+    credentials: true,
+  })
+);
+
 app.use(express.json());
 
 /* ==================== INIT GROQ ==================== */
@@ -586,7 +596,8 @@ app.get("/", (_, res) => {
 
 /* ==================== GITHUB OAUTH ==================== */
 app.get("/auth/github", (req, res) => {
-  const redirectUri = "http://localhost:5002/auth/github/callback";
+  const redirectUri ="https://github-roaster-mvtz.vercel.app/auth/github/callback";
+
   res.redirect(
     `https://github.com/login/oauth/authorize?client_id=${process.env.GITHUB_CLIENT_ID}&redirect_uri=${redirectUri}&scope=read:user`
   );
@@ -621,13 +632,14 @@ app.get("/auth/github/callback", async (req, res) => {
     const user = await userRes.json();
 
     res.redirect(
-      `http://localhost:5173?user=${encodeURIComponent(
-        JSON.stringify({
-          login: user.login,
-          avatar: user.avatar_url,
-        })
-      )}`
-    );
+  `https://github-roaster-ivory.vercel.app/?user=${encodeURIComponent(
+    JSON.stringify({
+      login: user.login,
+      avatar: user.avatar_url,
+    })
+  )}`
+);
+
   } catch {
     res.status(500).send("GitHub auth failed");
   }
@@ -1040,3 +1052,4 @@ app.post("/compare", async (req, res) => {
 app.listen(5002, () =>
   console.log("✅ Server running on http://localhost:5002")
 );
+export default app;
