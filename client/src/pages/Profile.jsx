@@ -502,7 +502,7 @@ function Profile({ user }) {
                   initial={{ opacity: 0 }}
                   animate={{ opacity: 1 }}
                   transition={{ delay: 0.4 }}
-                  className="text-center text-xs text-gray-500"
+                  className="text-center text-xs text-gray-900"
                 >
                   <p>
                     💼 Estimates based on GitHub activity, Indian tech market (2025), and role complexity.
