@@ -73,7 +73,7 @@
 //     setShareUrl(null);
 
 //     try {
-//       const res = await fetch("http://localhost:5002/roast", {
+//       const res = await fetch("https://github-roaster-mvtz.vercel.app/roast", {
 //         method: "POST",
 //         headers: { "Content-Type": "application/json" },
 //         body: JSON.stringify({ repoUrl, mode }),
@@ -376,7 +376,7 @@
 //     setShareUrl(null);
 
 //     try {
-//       const res = await fetch("http://localhost:5002/roast", {
+//       const res = await fetch("https://github-roaster-mvtz.vercel.app/roast", {
 //         method: "POST",
 //         headers: { "Content-Type": "application/json" },
 //         body: JSON.stringify({ repoUrl, mode }),
@@ -727,7 +727,7 @@ function Roast({ user }) {
     setShareUrl(null);
 
     try {
-      const res = await fetch("http://localhost:5002/roast", {
+      const res = await fetch("https://github-roaster-mvtz.vercel.app/roast", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ repoUrl, mode }),
