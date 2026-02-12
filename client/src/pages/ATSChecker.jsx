@@ -74,7 +74,7 @@ function ATSChecker() {
       formData.append('resume', resumeFile);
       formData.append('jobDescription', jobDescription);
 
-      const res = await fetch("http://localhost:5002/analyze-ats", {
+      const res = await fetch("https://github-roaster-mvtz.vercel.app/analyze-ats", {
         method: "POST",
         body: formData,
       });
