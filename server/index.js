@@ -6,7 +6,8 @@ import { analyzeLinkedInProfile } from './utils/linkedinAnalyzer.js';
 import multer from 'multer';
 import mammoth from 'mammoth';
 import { analyzeATSScore } from './utils/atsAnalyzer.js';
-import pdf from "pdf-parse";
+import pdfParse from "pdf-parse";
+
 
 
 dotenv.config();
@@ -715,7 +716,7 @@ const upload = multer({
 /* ==================== ATS RESUME CHECKER ==================== */
 async function extractTextFromPDF(buffer) {
   try {
-    const data = await pdf(buffer);
+    const data = await pdfParse(buffer);
     return data.text;
   } catch (error) {
     throw new Error(`PDF parsing failed: ${error.message}`);
