@@ -108,6 +108,9 @@ import Profile from "./pages/Profile";
 import Compare from "./pages/Compare";
 import Navbar from "./components/Navbar";
 import AnimatedBackground from "./components/AnimatedBackground";
+import LinkedInAnalyzer from "./pages/LinkedInAnalyzer";
+import ATSChecker from "./pages/ATSChecker";
+import LinkedInPostGenerator from "./pages/LinkedInPostGenerator";
 
 function App() {
   const [user, setUser] = useState(null);
@@ -158,6 +161,9 @@ function App() {
           <Route path="/roast" element={user ? <Roast user={user} /> : <Navigate to="/" />} />
           <Route path="/explain" element={user ? <Explain user={user} /> : <Navigate to="/" />} />
           <Route path="/profile" element={user ? <Profile user={user} /> : <Navigate to="/" />} />
+          <Route path="/linkedin" element={user ? <LinkedInAnalyzer /> : <Navigate to="/" />} />
+          <Route path="/ats" element={user ? <ATSChecker /> : <Navigate to="/" />} />
+          <Route path="/linkedin-post" element={user ? <LinkedInPostGenerator /> : <Navigate to="/" />}/>
           <Route path="/compare" element={user ? <Compare /> : <Navigate to="/" />} />
         </Routes>
       </div>

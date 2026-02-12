@@ -1,71 +1,5 @@
-// import { Link } from "react-router-dom";
-// import { LogOut, User } from "lucide-react";
-
-// function Navbar({ user, onLogout }) {
-//   return (
-//     <nav className="bg-gray-900/80 text-gray-200 backdrop-blur border-b border-white/10 sticky top-0 z-50">
-//       <div className="max-w-7xl mx-auto px-4 py-3">
-//         <div className="flex items-center justify-between">
-          
-//           {/* Logo */}
-//           <Link to="/roast" className="flex items-center gap-2 hover:opacity-80 transition">
-//             <span className="text-2xl">🔥</span>
-//             <span className="font-bold text-lg">RoastMyRepo</span>
-//           </Link>
-
-//           {/* Navigation Links */}
-//           <div className="flex items-center gap-4">
-//             <Link
-//               to="/roast"
-//               className="px-4 py-2 rounded-lg hover:bg-white/5 transition text-sm font-medium"
-//             >
-//               Roast
-//             </Link>
-//             <Link
-//               to="/explain"
-//               className="px-4 py-2 rounded-lg hover:bg-white/5 transition text-sm font-medium"
-//             >
-//               Explain
-//             </Link>
-//             <Link
-//               to="/profile"
-//               className="px-4 py-2 rounded-lg hover:bg-white/5 transition text-sm font-medium flex items-center gap-2"
-//             >
-//               <User className="w-4 h-4" />
-//               Profile
-//             </Link>
-//           </div>
-
-//           {/* User Section */}
-//           <div className="flex items-center gap-3">
-//             {user && (
-//               <>
-//                 <img
-//                   src={user.avatar}
-//                   alt={user.login}
-//                   className="w-8 h-8 rounded-full border-2 border-white/20"
-//                 />
-//                 <span className="text-sm font-medium">{user.login}</span>
-//               </>
-//             )}
-//             <button
-//               onClick={onLogout}
-//               className="p-2 hover:bg-red-500/10 rounded-lg transition text-red-400"
-//               title="Logout"
-//             >
-//               <LogOut className="w-4 h-4" />
-//             </button>
-//           </div>
-//         </div>
-//       </div>
-//     </nav>
-//   );
-// }
-
-// export default Navbar;
-
 import { Link, useLocation } from "react-router-dom";
-import { LogOut, Flame, BookOpen, User, GitCompare, Sparkles } from "lucide-react";
+import { LogOut, Flame, BookOpen, User, GitCompare, Sparkles ,Linkedin,FileCheck  } from "lucide-react";
 import { motion } from "framer-motion";
 
 function Navbar({ user, onLogout }) {
@@ -76,6 +10,9 @@ function Navbar({ user, onLogout }) {
     { path: "/explain", label: "Explain", icon: BookOpen },
     { path: "/compare", label: "Compare", icon: GitCompare },
     { path: "/profile", label: "Career", icon: User },
+     { path: "/ats", label: "ATS Check", icon: FileCheck },
+     { path: "/linkedin-post", label: "Post Gen", icon: Sparkles },
+     
   ];
 
   const isActive = (path) => location.pathname === path;
