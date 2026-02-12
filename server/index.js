@@ -6,7 +6,10 @@ import { analyzeLinkedInProfile } from './utils/linkedinAnalyzer.js';
 import multer from 'multer';
 import mammoth from 'mammoth';
 import { analyzeATSScore } from './utils/atsAnalyzer.js';
-import pdfParse from "pdf-parse";
+import { createRequire } from "module";
+const require = createRequire(import.meta.url);
+const pdfParse = require("pdf-parse");
+
 
 
 
