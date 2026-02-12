@@ -620,9 +620,6 @@ app.post("/compare", async (req, res) => {
 
 // Add this to your server.js file
 
-// Import at the top
-
-// Add this endpoint (paste after your other endpoints)
 
 /* ==================== LINKEDIN ANALYZER ==================== */
 app.post("/analyze-linkedin", async (req, res) => {
