@@ -45,8 +45,8 @@ function LinkedInPostGenerator() {
 
     try {
       const endpoint = mode === "manual" 
-        ? "http://localhost:5002/generate-linkedin-post"
-        : "http://localhost:5002/generate-linkedin-post-github";
+        ? "https://github-roaster-mvtz.vercel.app/generate-linkedin-post"
+        : "https://github-roaster-mvtz.vercel.app/generate-linkedin-post-github";
 
       const body = mode === "manual" 
         ? formData 
