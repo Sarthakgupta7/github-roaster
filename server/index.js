@@ -6,7 +6,8 @@ import { analyzeLinkedInProfile } from './utils/linkedinAnalyzer.js';
 import multer from 'multer';
 import mammoth from 'mammoth';
 import { analyzeATSScore } from './utils/atsAnalyzer.js';
-import * as pdfjsLib from 'pdfjs-dist/legacy/build/pdf.mjs';
+import pdf from "pdf-parse";
+
 
 dotenv.config();
 
@@ -714,28 +715,13 @@ const upload = multer({
 /* ==================== ATS RESUME CHECKER ==================== */
 async function extractTextFromPDF(buffer) {
   try {
-    // Convert buffer to Uint8Array
-    const data = new Uint8Array(buffer);
-    
-    // Load PDF document
-    const loadingTask = pdfjsLib.getDocument({ data });
-    const pdf = await loadingTask.promise;
-    
-    let fullText = '';
-    
-    // Extract text from each page
-    for (let i = 1; i <= pdf.numPages; i++) {
-      const page = await pdf.getPage(i);
-      const textContent = await page.getTextContent();
-      const pageText = textContent.items.map(item => item.str).join(' ');
-      fullText += pageText + '\n';
-    }
-    
-    return fullText;
+    const data = await pdf(buffer);
+    return data.text;
   } catch (error) {
     throw new Error(`PDF parsing failed: ${error.message}`);
   }
 }
+
 
 // ===== UPDATED ATS ENDPOINT (Replace your /analyze-ats endpoint) =====
 app.post("/analyze-ats", upload.single('resume'), async (req, res) => {
