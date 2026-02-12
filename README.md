@@ -2,8 +2,7 @@
 
 > **Transform your GitHub repos, resumes, and LinkedIn presence with AI-powered insights and generation**
 
-[![Live Demo](https://img.shields.io/badge/demo-live-brightgreen)](https://roastmyrepo.vercel.app)
-[![License](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
+[![Live Demo](https://img.shields.io/badge/demo-live-brightgreen)](https://github-roaster-ivory.vercel.app/)
 [![React](https://img.shields.io/badge/React-19-61dafb.svg)](https://reactjs.org/)
 [![Node.js](https://img.shields.io/badge/Node.js-18+-339933.svg)](https://nodejs.org/)
 [![Groq AI](https://img.shields.io/badge/Groq-AI-orange.svg)](https://groq.com/)
@@ -33,7 +32,7 @@ RoastMyRepo is a comprehensive AI-powered platform designed for developers to an
 
 ## 🚀 **Live Demo**
 
-👉 **[Try it now!](https://roastmyrepo.vercel.app)**
+👉 **[Try it now!](https://github-roaster-ivory.vercel.app/)**
 
 ---
 
