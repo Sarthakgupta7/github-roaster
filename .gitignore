@@ -1,0 +1,20 @@
+# Node
+node_modules/
+server/node_modules/
+client/node_modules/
+
+# Environment
+.env
+.env.*
+server/.env
+client/.env
+
+# Logs
+*.log
+logs/
+
+# Mac
+.DS_Store
+
+# Vercel
+.vercel
